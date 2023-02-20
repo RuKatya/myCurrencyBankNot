@@ -45,9 +45,9 @@ bot.hears(/^(?:-(?:[1-9](?:\d{0,2}(?:,\d{3})+|\d*))|(?:0|(?:[1-9](?:\d{0,2}(?:,\
                     Markup.button.callback('EURO', 'euro'),
                 ]
             ),
-            {
-                disable_web_page_preview: true
-            }
+            // {
+            //     disable_web_page_preview: true
+            // }
         )
     } catch (error) {
         console.log(error)
@@ -66,9 +66,9 @@ bot.action(/^(ils|usd|euro)$/, async (ctx) => {
                     fromCurrency == 'usd' ? [Markup.button.callback('ILS', 'tocurrencyils'), Markup.button.callback('EURO', 'tocurrencyeuro')] :
                         [Markup.button.callback('ILS', 'tocurrencyils'), Markup.button.callback('USD', 'tocurrencyusd')]
             ),
-            {
-                disable_web_page_preview: true
-            }
+            // {
+            //     disable_web_page_preview: true
+            // }
         )
     } catch (error) {
         console.log(error)
@@ -88,9 +88,9 @@ bot.action(/^tocurrency/, async (ctx) => {
                     Markup.button.callback('No?', 'no')
                 ]
             ),
-            {
-                disable_web_page_preview: true
-            }
+            // {
+            //     disable_web_page_preview: true
+            // }
         )
     } catch (error) {
         console.log(error)
@@ -112,21 +112,51 @@ To start again insert amount`)
             if (fromCurrency == "ils" && toCurrency == "usd") {
                 total = amount / 3.57
                 console.log(total)
+                await ctx.replyWithHTML(`Love you !!!
+            From: ${fromCurrency.toUpperCase()}
+            To: ${toCurrency.toUpperCase()}
+            Total: ${total}`
+                )
             } else if (fromCurrency == "ils" && toCurrency == "eoru") {
                 total = amount / 3.82
                 console.log(total)
+                await ctx.replyWithHTML(`Love you !!!
+            From: ${fromCurrency.toUpperCase()}
+            To: ${toCurrency.toUpperCase()}
+            Total: ${total}`
+                )
             } else if (fromCurrency == "usd" && toCurrency == "ils") {
                 total = amount * 3.57
                 console.log(total)
+                await ctx.replyWithHTML(`Love you !!!
+            From: ${fromCurrency.toUpperCase()}
+            To: ${toCurrency.toUpperCase()}
+            Total: ${total}`
+                )
             } else if (fromCurrency == "usd" && toCurrency == "euro") {
-                total = amount * 1.07
+                total = amount / 1.07
                 console.log(total)
+                await ctx.replyWithHTML(`Love you !!!
+            From: ${fromCurrency.toUpperCase()}
+            To: ${toCurrency.toUpperCase()}
+            Total: ${total}`
+                )
             } else if (fromCurrency == "euro" && toCurrency == "ils") {
                 total = amount * 3.82
                 console.log(total)
+                await ctx.replyWithHTML(`Love you !!!
+            From: ${fromCurrency.toUpperCase()}
+            To: ${toCurrency.toUpperCase()}
+            Total: ${total}`
+                )
             } else if (fromCurrency == "euro" && toCurrency == "usd") {
-                total = amount / 1.07
+                total = amount * 1.07
                 console.log(total)
+                await ctx.replyWithHTML(`Love you !!!
+            From: ${fromCurrency.toUpperCase()}
+            To: ${toCurrency.toUpperCase()}
+            Total: ${total}`
+                )
             }
             // const { data } = await axios.get(`https://api.apilayer.com/exchangerates_data/convert?to=${toCurrency}&from=${fromCurrency}&amount=${amount}`, requestOptions)
 
@@ -145,10 +175,11 @@ To start again insert amount`)
             // } else {
             //     await ctx.replyWithHTML(`No data, sorry!`)
             // }
-            await ctx.replyWithHTML(`Love you !!!
-            From: ${fromCurrency.toUpperCase()}
-            To: ${toCurrency.toUpperCase()}
-            Total: ${total}`)
+            // await ctx.replyWithHTML(`Love you !!!
+            // From: ${fromCurrency.toUpperCase()}
+            // To: ${toCurrency.toUpperCase()}
+            // Total: ${total}`
+            // )
         }
     } catch (error) {
         console.log(error)
