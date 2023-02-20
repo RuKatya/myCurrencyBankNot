@@ -1,0 +1,28 @@
+{
+  "name": "mycurrencybanknot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuKatya/myCurrencyBankNot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuKatya/myCurrencyBankNot/issues"
+  },
+  "homepage": "https://github.com/RuKatya/myCurrencyBankNot#readme",
+  "dependencies": {
+    "@everapi/currencyapi-js": "^1.0.6",
+    "axios": "^1.3.3",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0",
+    "telegraf": "^4.11.2"
+  }
+}
